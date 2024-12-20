@@ -1,0 +1,104 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+.container {
+  text-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  max-width: 90%;
+  position: relative;
+  z-index: 101;
+  width: 50%;
+  /* background-image: url('./britishairways_21686364003704_thumb.jpg'); */
+
+  background-size: cover;
+}
+h1 {
+  margin-bottom: 0px;
+}
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box; /* Make sure padding doesn't affect the width */
+  resize: vertical; /* Allows the user to resize vertically */
+  min-height: 100px; /* Ensure the textarea is not too small initially */
+}
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+.result-container {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  text-align: left;
+  font-size: 30px;
+}
+.result-container p {
+  margin: 5px 0;
+}
+
+/* Added Gradient text style */
+.gradient-text {
+  background: linear-gradient(90deg, rgb(108, 0, 162), rgb(0, 17, 82));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  color: white;
+}
+
+/* Added Gradient button style */
+.gradient-button {
+  background: linear-gradient(90deg, rgb(108, 0, 162), rgb(82, 114, 244));
+  color: white;
+}
+
+.cont {
+  display: flex;
+  flex-direction: column;
+  background-image: url('./britishairways_21686364003704_thumb.jpg');
+  background-position: center;
+  background-size: cover;
+  
+}
+
+.headd {
+  font-size: 50px;
+  color: white; /* your original color */
+  text-shadow: -1.5px -1.5px 0 #000,  /* top left */
+               1.5px -1.5px 0 #000,   /* top right */
+               -1.5px 1.5px 0 #000,   /* bottom left */
+                1.5px 1.5px 0 #000;   /* bottom right */
+}
+
+.flag-icon {
+  font-size: 30px;
+  border-radius: 10px;
+  position: relative;
+  bottom: 5px;
+}
+
+.enter {
+  font-size: 40px;
+  
+}
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sentiment Analyzer</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='background.css') }}"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css"
+    />
+  </head>
+  <body>
+    <div class="text-container">Bubbles</div>
+    <div class="gradient-bg">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="10"
+              result="blur"
+            />
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+              result="goo"
+            />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
+      <div class="gradients-container">
+        <div class="g1"></div>
+        <div class="g2"></div>
+        <div class="g3"></div>
+        <div class="g4"></div>
+        <div class="g5"></div>
+        <div class="interactive"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cont">
+        <h1 class="">
+          <p class="headd">
+            Sentiment Analyzer For
+            <span class="flag-icon flag-icon-gb"></span> Passengers Reviews
+          </p>
+          ✈️
+        </h1>
+        
+      </div>
+      <h2 class="gradient-text enter">Enter Your Review</h2>
+      <form method="post">
+        <textarea
+          name="review_text"
+          placeholder="Type your review here..."
+          required
+        ></textarea>
+        <button type="submit" class="gradient-button">Analyze Sentiment</button>
+      </form>
+
+      {% if result %}
+      <div class="result-container">
+        <p><strong class="gradient-text">Review:</strong> {{ result.review }}</p>
+        <p><strong class="gradient-text">Processed Review:</strong> {{ result.processed_review }}</p>
+        <p><strong class="gradient-text">Sentiment Score:</strong> {{ result.sentiment_score }}</p>
+        <p>
+          <strong class="gradient-text">Sentiment Polarity:</strong> {{ result.sentiment_polarity }}
+        </p>
+      </div>
+      {% endif %}
+    </div>
+    <script src="{{ url_for('static', filename='background.js') }}"></script>
+  </body>
+</html>
