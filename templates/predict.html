@@ -96,6 +96,11 @@
 
             <button type="submit" class="gradient-button">Predict</button>
         </form>
+        <div class="button-container">
+          <a href="/">
+            <button class="gradient-button">Go to Sentiment Analysis Page</button>
+          </a>
+        </div>
         {% if knn_prediction %}
         <div class="result-container">
            <p><strong class="gradient-text">KNN Prediction:</strong> {{ knn_prediction }}</p>

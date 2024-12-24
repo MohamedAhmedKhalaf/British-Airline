@@ -146,7 +146,8 @@ def predict():
                                 knn_prediction=knn_prediction_label,
                                 svm_prediction=svm_prediction_label,
                                 decision_tree_prediction=decision_tree_prediction_label,
-                                naive_bayes_prediction = naive_bayes_prediction_label
+                                naive_bayes_prediction = naive_bayes_prediction_label,
+                                aircraft_types=aircraft_types
                             )
     return render_template('predict.html',aircraft_types=aircraft_types)
 

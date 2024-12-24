@@ -102,3 +102,12 @@ button:hover {
   
 }
 
+.button-container {
+  display: flex;
+  justify-content: center; /* Center buttons horizontally */
+  margin-top: 15px; /* Add some space above buttons */
+}
+.button-container button {
+
+ margin: 0 5px;
+}

@@ -65,7 +65,7 @@
         </h1>
         
       </div>
-      <h2 class="gradient-text enter">Enter Your Review</h2>
+       <h2 class="gradient-text enter">Enter Your Review</h2>
       <form method="post">
         <textarea
           name="review_text"
@@ -74,6 +74,11 @@
         ></textarea>
         <button type="submit" class="gradient-button">Analyze Sentiment</button>
       </form>
+       <div class="button-container">
+        <a href="/predict">
+         <button class="gradient-button">Go to Prediction Page</button>
+        </a>
+      </div>
 
       {% if result %}
       <div class="result-container">
