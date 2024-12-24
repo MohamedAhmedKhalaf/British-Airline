@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Review Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='background.css') }}"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css"
+    />
+</head>
+<body>
+    <div class="text-container">Bubbles</div>
+    <div class="gradient-bg">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="10"
+              result="blur"
+            />
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+              result="goo"
+            />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
+      <div class="gradients-container">
+        <div class="g1"></div>
+        <div class="g2"></div>
+        <div class="g3"></div>
+        <div class="g4"></div>
+        <div class="g5"></div>
+        <div class="interactive"></div>
+      </div>
+    </div>
+    <div class="container">
+         <div class="cont">
+        <h1 class="">
+          <p class="headd">
+            Airline Review Prediction
+          </p>
+          ✈️
+        </h1>
+        
+      </div>
+        <h2 class="gradient-text enter">Enter the Following Details</h2>
+        <form method="post">
+          <label for="aircraft">Aircraft:</label>
+          <select name="aircraft" id="aircraft">
+             {% for aircraft in aircraft_types %}
+             <option value="{{ aircraft }}">{{ aircraft }}</option>
+            {% endfor %}
+          </select>
+           <label for="seating_comfort">Seating Comfort (1-5):</label>
+            <input type="number" name="seating_comfort" id="seating_comfort" min="1" max="5" step="0.1" required>
+
+            <label for="staff_service">Staff Service (1-5):</label>
+            <input type="number" name="staff_service" id="staff_service" min="1" max="5" step="0.1" required>
+
+            <label for="food_quality">Food Quality (1-5):</label>
+            <input type="number" name="food_quality" id="food_quality" min="1" max="5" step="0.1" required>
+
+            <label for="entertainment">Entertainment (1-5):</label>
+            <input type="number" name="entertainment" id="entertainment" min="1" max="5" step="0.1" required>
+
+             <label for="wifi">Wifi (1-5):</label>
+             <input type="number" name="wifi" id="wifi" min="1" max="5" step="0.1" required>
+
+            <label for="ground_service">Ground Service (1-5):</label>
+            <input type="number" name="ground_service" id="ground_service" min="1" max="5" step="0.1" required>
+        
+             <label for="value_for_money">Value for Money (1-5):</label>
+            <input type="number" name="value_for_money" id="value_for_money" min="1" max="5" step="0.1" required>
+
+
+            <button type="submit" class="gradient-button">Predict</button>
+        </form>
+        {% if knn_prediction %}
+        <div class="result-container">
+           <p><strong class="gradient-text">KNN Prediction:</strong> {{ knn_prediction }}</p>
+           <p><strong class="gradient-text">SVM Prediction:</strong> {{ svm_prediction }}</p>
+           <p><strong class="gradient-text">Decision Tree Prediction:</strong> {{ decision_tree_prediction }}</p>
+            <p><strong class="gradient-text">Naive Bayes Prediction:</strong> {{ naive_bayes_prediction }}</p>
+        </div>
+         {% endif %}
+    </div>
+    <script src="{{ url_for('static', filename='background.js') }}"></script>
+</body>
+</html>
